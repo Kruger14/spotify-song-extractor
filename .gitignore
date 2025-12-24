@@ -52,3 +52,8 @@ data/
 dist/
 build/
 *.egg-info/
+
+# ============================
+# Cache like access token, expiration etc
+# ============================
+.cache

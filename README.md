@@ -83,10 +83,14 @@ pip install -r requirements.txt
 
 Create a `.env` file in the project root:
 
+
+Spotify is warning that localhost will stop being accepted in the future.
+They now require explicit loopback IPs, like: http://127.0.0.1:8888/callback and add same in spotify dashboard
+
 ```env
 SPOTIFY_CLIENT_ID=your_client_id
 SPOTIFY_CLIENT_SECRET=your_client_secret
-SPOTIFY_REDIRECT_URI=http://localhost:8080
+SPOTIFY_REDIRECT_URI=http://127.0.0.1:8888/callback
 ```
 
 🔹 Required **only** for Spotify playlist extraction
@@ -142,7 +146,7 @@ python -m music_cli.cli playlist URL -o my_music
 
 ---
 
-## 📄 Download from a JSON Playlist (NO Spotify)
+## 📄 Download from a JSON Playlist (NO Spotify Api required)
 
 If you already have a playlist JSON file:
 
@@ -166,7 +170,7 @@ python -m music_cli.cli json data/playlist.json -o downloads
 ```
 
 ✔ No Spotify
-✔ No internet auth
+✔ No auth required
 
 ---
 
